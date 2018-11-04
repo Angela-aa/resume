@@ -267,14 +267,14 @@
                         </li>
                         <li >
                             <a title="春天的那一抹新绿" href="#" target="_blank">
-                                <i><img class="imgLoad" src="img/caipu_img/20180425152462557321613.jpg" style="display: block;"></i>
+                                <i><img class="imgLoad" src="img/caipu_img/20180425152462557321613.jpg" style="display: block;"></i><!---->
                                 <div class="os"></div>
                                 <p class="line2">春天的那一抹新绿<br><span>篇菜谱</span></p>
                             </a>
                         </li>
                         <li >
                             <a title="网红食品做法集合" href="#" target="_blank">
-                                <i><img class="imgLoad" src="img/caipu_img/20171204151238780056213.jpg" style="display: block;"></i>
+                                <i><img class="imgLoad" src="img/caipu_img/20171204151238780056213.jpg" style="display: block;"></i><!---->
                                 <div class="os"></div>
                                 <p class="line2">网红食品做法集合<br><span>篇菜谱</span></p>
                             </a>
@@ -316,7 +316,49 @@
                         </li>
                     </ul>
                 </div>
-                <span class="control"><a class="prevBtn" href="#" @click="move(-1)" @keyup.37="move(-1)"><i>&nbsp;</i></a><a class="nextBtn" href="#" @click="move(+1)" @keyup.39="move(+1)"><i>&nbsp;</i></a></span>
+                <span class="control"><a class="prevBtn" href="#" @click="mymove(-1)" @keyup.37="mymove(-1)"><i>&nbsp;</i></a><a class="nextBtn" href="#" @click="mymove(+1)" @keyup.39="mymove(+1)"><i>&nbsp;</i></a></span>
+            </div>
+            <div id="slider">
+                <div class="window" @mouseover="stop" @mouseleave="play">
+                <ul class="container" :style="containerStyle">
+                    <li><a>
+                        <div class="os"></div>
+                        <img :style="{width:imgWidth+'px'}" src="img/caipu_img/2017021214868864303048471547.JPG" alt="">
+                        <span class="number">+1</span><br><span>篇菜谱</span></a>
+                    </li>        
+                    <li><a>
+                        <div class="os"></div>
+                        <img :style="{width:imgWidth+'px'}" src="img/caipu_img/20180425152462557321613.jpg" alt="">
+                        <span class="number">网红食品做法集合</span><br><span>篇菜谱</span></a>
+                    </li>
+                    <li><a>
+                        <div class="os"></div>
+                        <img :style="{width:imgWidth+'px'}" src="img/caipu_img/20171009150751786074913.jpg" alt="">
+                        <span class="number">拔牙后吃这些也有胃口</span><br><span>篇菜谱</span></a>
+                    </li>
+                    <li  v-for="(item, index) in sliders" :key="index"><a>
+                        <img :style="{width:imgWidth+'px'}" :src="item.img" alt="">
+                        <div class="os"></div>
+                        <p class="number">{{item.num}}<br><span>篇菜谱</span></p></a>
+                    </li>
+                    <li><a>
+                        <div class="os"></div>
+                        <img :style="{width:imgWidth+'px'}" src="img/caipu_img/20171204151238780056213.jpg" alt="">
+                        <span class="number">营养健康无黄油小零食</span><br></a>
+                    </li>        
+                    <li><a>
+                        <div class="os"></div>
+                        <img :style="{width:imgWidth+'px'}" src="img/caipu_img/20161117147936327393813.jpg" alt="">
+                        <span class="number">百变的滋味，家常凉菜</span><br></a>
+                    </li>
+                    <li><a>
+                        <div class="os"></div>
+                        <img :style="{width:imgWidth+'px'}" src="img/caipu_img/20180212151839474596910606182.jpg" alt="">
+                        <span class="number">网红美食，到底有多好吃</span></a>
+                    </li>
+                </ul>
+                <span class="control"><a class="prevBtn" href="#" @click="move(1035, 1, speed)"><i>&nbsp;</i></a><a class="nextBtn" href="#" @click="move(1035, -1, speed)"><i>&nbsp;</i></a></span>
+                </div>
             </div>
             <div class="pic-list">
                     <a href="#" target="_blank" title="一周最热">
@@ -405,6 +447,16 @@ import Footer from '@/views/Footer.vue'
       components: {
           Footer
       },
+        props: {
+            initialSpeed: {
+            type: Number,
+            default: 30
+            },
+            initialInterval: {
+            type: Number,
+            default: 3
+            }
+        },      
       data:function(){
           return{
                 height375:"",
@@ -414,7 +466,62 @@ import Footer from '@/views/Footer.vue'
                 pageIndex:0,
                 pageSize:20,
                 hasMore:true,
-                pageCount:1
+                pageCount:1,
+                sliders:[
+                    {
+                    img:'img/caipu_img/20171204151238780056213.jpg',
+                    num:'营养健康无黄油小零食'
+                    },
+                    {
+                    img:'img/caipu_img/20161117147936327393813.jpg',
+                    num:'百变的滋味，家常凉菜'
+                    },
+                    {
+                    img:'img/caipu_img/20180212151839474596910606182.jpg',
+                    num:'网红美食，到底有多好吃'
+                    },
+                    {
+                    img:'img/caipu_img/2018032115216195684921958079.jpg',
+                    num:'恋爱算什么，零食才是王道'
+                    },
+                    {
+                    img:'img/caipu_img/20180512152609786562010104261.jpg',
+                    num:'秋刀鱼的味道，猫跟你都想了解'
+                    },
+                    {
+                    img:'img/caipu_img/c640_20160215145554152783413.jpg',
+                    num:'饥饿食堂：饱了还能吃两口'
+                    },
+                    {
+                    img:'img/caipu_img/2018060615282955646291.jpg',
+                    num:'奥利奥的n种吃法'
+                    },
+                    {
+                    img:'img/caipu_img/c640_20160323145869817617413.jpg',
+                    num:'热菜五花肉的N种吃法'
+                    },
+                    {
+                    img:'img/caipu_img/20180304152014545984013.jpg',
+                    num:'清新沁人の青柠味'
+                    },
+                    {
+                    img:'img/caipu_img/2017021214868864303048471547.JPG',
+                    num:'春天的那一抹新绿'
+                    },
+                    {
+                    img:'img/caipu_img/20180425152462557321613.jpg',
+                    num:'网红食品做法集合'
+                    },
+                    {
+                    img:'img/caipu_img/20171009150751786074913.jpg',
+                    num:'拔牙后吃这些也有胃口'
+                    }        
+                ],
+                imgWidth:300,
+                currentIndex:1,
+                distance:-1035,
+                transitionEnd: true,
+                speed: this.initialSpeed
             }
       },
       methods:{
@@ -424,7 +531,7 @@ import Footer from '@/views/Footer.vue'
                 hide(){
                     this.height375=""
                 },
-                move(i){
+                mymove(i){
                     if(i==-1)
                         this.left+=345*3
                     else
@@ -442,11 +549,76 @@ import Footer from '@/views/Footer.vue'
                         this.list=rows;
                         this.pageCount=result.body.pageCount;
                     })
-                }            
+                },
+                init(){
+                    this.play()
+                    window.onblur = function() { this.stop() }.bind(this)
+                    window.onfocus = function() { this.play() }.bind(this)            
+                },
+                move(offset, direction, speed) {
+                console.log(speed)
+                if (!this.transitionEnd) return
+                this.transitionEnd = false
+                direction === -1 ? this.currentIndex += offset/345 : this.currentIndex -= offset/345
+                if (this.currentIndex > 12) this.currentIndex = 1
+                if (this.currentIndex < 1) this.currentIndex = 12
+
+                const destination = this.distance + offset * direction
+                this.animate(destination, direction, speed)
+                },
+                animate(des, direc, speed) {
+                if (this.temp) {
+                    window.clearInterval(this.temp);
+                    this.temp = null ;
+                }
+                this.temp = window.setInterval(() => {
+                    if ((direc === -1 && des < this.distance) || (direc === 1 && des > this.distance)) {
+                    this.distance += speed * direc
+                    } else {
+                    this.transitionEnd = true
+                    window.clearInterval(this.temp)
+                    this.distance = des
+                    if (des < -4140) this.distance = -1035
+                    if (des > -1035) this.distance = -4140
+                    }
+                }, 50)
+                },
+                jump(index) {
+                const direction = index - this.currentIndex >= 0 ? -1 : 1;
+                const offset = Math.abs(index - this.currentIndex) * 1035;
+                const jumpSpeed = Math.abs(index - this.currentIndex) === 0 ? this.speed : Math.abs(index - this.currentIndex) * this.speed ;
+                this.move(offset, direction, jumpSpeed)
+                },
+                play() {
+                if (this.timer) {
+                    window.clearInterval(this.timer)
+                    this.timer = null
+                }
+                this.timer = window.setInterval(() => {
+                    this.move(1035, -1, this.speed)
+                }, this.interval)
+                },
+                stop() {
+                window.clearInterval(this.timer)
+                this.timer = null
+                }                
         },
       created(){
           this.getRecipe();
-      }
+      },
+      computed:{
+        containerStyle() {
+        return {
+            transform:`translate3d(${this.distance}px, 0, 0)`
+        }
+        },
+        interval() {
+        return this.initialInterval * 5000
+        }
+      },
+      mounted() {
+        this.init()
+      },
     }
 </script>
 <style scoped>
@@ -692,6 +864,7 @@ import Footer from '@/views/Footer.vue'
         overflow: hidden;
         margin-top:10px;
         background: #999999;
+        display:none;
     }
 
     #home_index_slider ul>li{
@@ -961,5 +1134,157 @@ import Footer from '@/views/Footer.vue'
     #content-box .container .loading a:hover{
         color: #f8f8f8;
         background-color: #ff6767;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*轮播图*/
+      #slider ol,ul{
+        list-style: none;
+      }
+    #slider{
+        margin-top:10px;
+        text-align: center;
+      }
+      #slider .window{
+        position:relative;
+        width:990px;
+        height:225px;
+        margin:0 auto;
+        overflow:hidden;
+        background:green;
+      }
+      #slider .container{
+        display:flex;
+        position:absolute;
+      }
+      #slider .left, .right{
+        position:absolute;
+        top:50%;
+        transform:translateY(-50%);
+        width:50px;
+        height:50px;
+        background-color:rgba(0,0,0,.3);
+        border-radius:50%;
+        cursor:pointer;
+      }
+      #slider .left{
+        left:3%;
+        padding-left:12px;
+        padding-top:10px;
+      }
+      # slider .right{
+        right:3%;
+        padding-right:12px;
+        padding-top:10px;
+      }
+       #slider img{
+        width:300px;
+        height: 300px;
+        transition: all .5s ease-in-out;
+        user-select: none;
+        margin-right:45px;
+        margin-top:-37px;
+      }
+      # slider .dots{
+          position:absolute;
+          bottom:10px;
+          left:50%;
+          transform:translateX(-50%);
+        }
+      #slider .dots li{
+        display:inline-block;
+        width:15px;
+        height:15px;
+        margin:0 3px;
+        border:1px solid white;
+        border-radius:50%;
+        background-color:#333;
+        cursor:pointer;
+      }
+      #slider .dots .dotted{
+        background-color:orange;
+      }
+      #slider .container>li{
+        background:#fff;
+        position:relative;
+        height:225px;
+        width:345px;
+      }
+      #slider .number{
+        position:relative;
+        top:-190px;
+        left:0;
+        width:300px;
+        font-size:20px;
+        text-align:center;
+        color:#fff;
+        z-index:3;
+        cursor:pointer;
+      }
+      #slider .number span{
+          font-size:12px;
+      }
+      #slider .control .nextBtn, #slider .control .prevBtn{
+        width: 40px;
+        height: 50px;
+        position: absolute;
+        top: 87.5px;
+        left:0px;
+        z-index: 3;
+        background-color: #000;
+        opacity: .3;
+        text-indent: -9999em;
+    }/*左右箭头*/
+    #slider .control .nextBtn{
+        position: absolute;
+        right: 0;
+        left: auto;
+    }
+    #slider .control .nextBtn i, #slider .control .prevBtn i{
+        display: block;
+        width: 18px;
+        height: 35px;
+        background:url(/../img/arrow.png) no-repeat;
+        margin: 7px 0 0 11px;
+    }
+    #slider .control .nextBtn i{
+        background-position: -18px 0;
+    }
+    #slider .control .nextBtn.margin_left{
+        margin-left: 0px;
+    }
+    #slider .container .os{
+        width: 300px;
+        height: 225px;
+        background: #000;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        opacity: .3;
+        cursor:pointer;
+    }
+    #slider .container ul li a{
+        width:300px;
+        height:225px;
+        display:block;
+        position:relative;
+    }
+    #slider .container ul li>a:hover img{
+        transform: scale(1.1);
+    }
+    #content-box #slider .container{
+        padding:0;
     }
 </style>
