@@ -12,24 +12,24 @@
         </div>
         <div class="login-l" >
             <ul>
-                <li>手机号/昵称：<input type="text"></li>
-                <li>密　码：<input type="password"></li>
+                <li>手机号/昵称：<input type="text" v-model="uname"></li>
+                <li>密　码：<input type="password" v-model="upwd"></li>
             </ul>
             <p>
                 <input type="checkbox" id="loginauto"><label for="loginauto">下次自动登录</label>
                 <a href="#">忘记密码？</a>
             </p>
-            <input type="button" value="登录">
+            <input type="button" value="登录" @click="signin">
         </div>
         <!--注册-->
         <div class="register-l" style="display: none">
             <ul>
-                <li>手机号/昵称：<input type="text"></li>
-                <li>密　码：<input type="password"></li>
-                <li>确认密码：<input type="password"></li>
-                <li>邮箱：<input type="text"></li>
+                <li>手机号/昵称：<input type="text" v-model="uname"></li>
+                <li>密　码：<input type="password" v-model="upwd"></li>
+                <li>确认密码：<input type="password" v-model="reupwd"></li>
+                <li>邮箱：<input type="text" v-model="email"></li>
             </ul>
-            <input type="button" value="注册">
+            <input type="button" value="注册" @click="register">
         </div>
         <div class="login-r">
             <img src="img/header_img/msc_app.png" alt="">
@@ -44,8 +44,14 @@
 </div>
 </template>
 <script>
+import {Toast} from 'mint-ui'
 export default {
-   
+   data(){return{
+       uname:"",
+       upwd:"",
+       email:"",
+       reupwd:""
+   }},
     methods:{
         login(){
             $("div.login-h>a").click(function(){
@@ -59,32 +65,56 @@ export default {
                  $("div.register-l").css("display","block")
              }
             })
-        }  
+        },
+        signin(){
+            this.$http.post("users/signin",{uname:this.uname,upwd:this.upwd})
+            .then(result=>{
+                if(result.body.ok==0)
+                    Toast(result.body.msg)
+                else{
+                    this.$router.push('/index/'+this.uname)
+                    location.reload()
+                }
+            })
+        },
+        register(){
+            this.$http.post("users/register",{uname:this.uname,upwd:this.upwd,reupwd:this.reupwd,email:this.email})
+            .then(result=>{
+                if(result.body.code==200){
+                    setTimeout(()=>{
+                        Toast("注册成功")
+                        this.$router.push('login')
+                        location.reload()
+                    },1000)
+                }else{
+                    console.log(this.uname)
+                    Toast(result.body.msg)
+                }
+            })
+        }
+       
 
     },
 //首页轮播图
-mounted(){
+    created(){
+        setInterval(function(){
+            var $img=$("#login>img.show")
+            $img.next().addClass("show")
+                .siblings().removeClass("show")
+            if(!$img.next().is("img")){
+            $img.parent().children("img.hide")
+                .first().addClass("show")
+                .siblings().removeClass("show")
+            }
+        },8000)
 
-    setInterval(function(){
-        var $img=$("#login>img.show")
-        $img.next().addClass("show")
-            .siblings().removeClass("show")
-        if(!$img.next().is("img")){
-           $img.parent().children("img.hide")
-               .first().addClass("show")
-               .siblings().removeClass("show")
+        if(location.href.indexOf("register")!==-1){
+                $("div.login-h>a:first-child").addClass("on")
+                    .next().removeClass("on")
+                $("div.login-l").css("display","none")
+                $("div.register-l").css("display","block")
         }
-    },8000)
-
-    if(location.href.indexOf("register")!==-1){
-            $("div.login-h>a:first-child").addClass("on")
-                .next().removeClass("on")
-            $("div.login-l").css("display","none")
-            $("div.register-l").css("display","block")
     }
-   
- 
-}
 }
 </script>
 <style scoped>
