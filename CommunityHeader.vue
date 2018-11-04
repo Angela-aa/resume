@@ -4,16 +4,16 @@
         <!--logo-->
         <div class="logo">
             <div class="left">
-               <a href="#"><img src="img/community-img/logo.png" alt=""></a>
+               <router-link to="/"><img src="img/community-img/logo.png" alt=""></router-link>
                <a href="#">社区</a>
             </div>
             <div class="right">
                <input type="text"><a href="#"><img src="img/community-img/search.png">搜索</a>
             </div>
             <div class="middle">
-                <a href="#">社区广场</a>
-                <router-link to="communityheader/topic">话题</router-link>
-                <router-link to="communityheader/rizhi">日志</router-link>
+                <router-link to="/communityheader/">社区广场</router-link>
+                <router-link to="/communityheader/topic">话题</router-link>
+                <router-link to="/communityheader/rizhi">日志</router-link>
                 <a href="#">活动</a>
             </div>
             <b></b>
@@ -42,8 +42,8 @@
     }
     div.container{
         width:990px;
-        margin:20px auto 0px;
-        padding-bottom:15px;
+        margin:20px auto 15px;
+        
     }
     /**********************logo**********************/
     div.logo{
@@ -95,20 +95,27 @@
     div.logo .middle a:hover{
         color:#FF838B;
     }
+
     div.logo .right input{
-        height:27px;
+        height:26px;
+        border:1px solid #999;
         border-radius:3px 0 0 3px;
         border-right:none;
+        outline:none;
     }
     div.logo .right a{
     font-size:15px;
     display:inline-block;
     background:#999;
     color:#fff;
-    height:29px;
-    line-height:29px;
+    height:28px;
+    line-height:28px;
     border-radius:0 3px 3px 0;
     padding-right:10px;
+    position:relative;
+    top:1px;
+    left:0;
+
     }
     div.logo .right a:hover{
         background:#FF838B;
@@ -140,6 +147,7 @@
         position:absolute;
         left:51%;
         bottom:-16px;
+        z-index:1;
     }
 
     /**********************nav**********************/
