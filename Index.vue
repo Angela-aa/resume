@@ -3,33 +3,33 @@
 		<div class="logo_warp">
 			<div class="container clear">
 				<div class="logo_inner clear">
-					<a href="#"></a>
+					<a href="javascript:void(0);"></a>
 				</div>
 				<div class="logo_nav ">
 					<ul>
 						<li class="on">
-							<a href="#">首页</a>
+							<router-link to="/">首页</router-link>
 						</li>
 						<li>
-							<a href="#">菜谱</a>
+							<router-link to="/recipe">菜谱</router-link>
 						</li>
 						<li>
-							<a href="#">食材</a>
+							<router-link to="/communityheader/topic">食材</router-link>
 						</li>
 						<li>
-							<a href="#">珍选</a>
+							<router-link to="/communityheader/rizhi">珍选</router-link>
 						</li>
 						<li>
-							<a href="#">健康</a>
+							<router-link to="/recipe">健康</router-link>
 						</li>
 						<li>
-							<a href="#">专题</a>
+							<router-link to="/communityheader/topic">专题</router-link>
 						</li>
 						<li>
-							<a href="#">社区</a>
+							<router-link to="/communityheader">社区</router-link>
 						</li>
 						<li>
-							<a href="#">话题</a>
+							<router-link to="/communityheader/topic">话题</router-link>
 						</li>
 					</ul>
 				</div>
@@ -45,11 +45,11 @@
 					<div class="carrousel">
 						<div class="carrousel_list">
 							<ul>
-								<li v-for="(img,index) in imgArr" @click="setIndex(index)" :data-target="img.id" :class="{selected:index == mark}"></li>
+								<li v-for="(img,index) in imgArr" @click="setIndex(index)" :data-target="img.mf_id" :class="{selected:index == mark}"></li>
 							</ul>
 						</div>
 						<div class="carrousel_img">
-							<router-link to="mofang" v-for="(img,i) in imgArr"><img :src="img.src" :id="img.id" v-show="i == mark" @mouseenter="mouseenter()" @mouseleave="mouseleave()" /></router-link>
+							<router-link :to="`/mofang/${img.mf_id}`" v-for="(img,i) in imgArr" :key="i"><img :src="img.banner" :id="img.mf_id" v-show="i == mark" @mouseenter="mouseenter()" @mouseleave="mouseleave()" /></router-link>
 
 						</div>
 						<div class="prev" @click="clickleft()"></div>
@@ -58,157 +58,157 @@
 					<div class="banner_1_list">
 						<ul>
 							<li>
-								<a href="#"><i></i>菜谱大全<b></b></a>
+								<a href="javascript:void(0);"><i></i>菜谱大全<b></b></a>
 								<div class="sub_list">
 									<ul>
 										<li>
-											<a href="#">一周热门<span>近七天最受欢迎</span></a>
+											<a href="javascript:void(0);">一周热门<span>近七天最受欢迎</span></a>
 										</li>
 										<li>
-											<a href="#">人气菜肴<span>超过50人收藏</span></a>
+											<a href="javascript:void(0);">人气菜肴<span>超过50人收藏</span></a>
 										</li>
 										<li>
-											<a href="#">秋季食谱<span>看看大家在吃啥</span></a>
+											<a href="javascript:void(0);">秋季食谱<span>看看大家在吃啥</span></a>
 										</li>
 										<li>
-											<a href="#">早餐<span>像国王一样早餐</span></a>
+											<a href="javascript:void(0);">早餐<span>像国王一样早餐</span></a>
 										</li>
 										<li>
-											<a href="#">高颜值<span>颜控专用通道</span></a>
+											<a href="javascript:void(0);">高颜值<span>颜控专用通道</span></a>
 										</li>
 										<li>
-											<a href="#">凉菜<span>精选2600道</span></a>
+											<a href="javascript:void(0);">凉菜<span>精选2600道</span></a>
 										</li>
 										<li>
-											<a href="#">热菜<span>精选42500道</span></a>
+											<a href="javascript:void(0);">热菜<span>精选42500道</span></a>
 										</li>
 										<li>
-											<a href="#">主食<span>精选18000道</span></a>
+											<a href="javascript:void(0);">主食<span>精选18000道</span></a>
 										</li>
 										<li>
-											<a href="#">小吃<span>精选11000道</span></a>
+											<a href="javascript:void(0);">小吃<span>精选11000道</span></a>
 										</li>
 										<li>
-											<a href="#">酱泡腌菜<span>精选700道</span></a>
+											<a href="javascript:void(0);">酱泡腌菜<span>精选700道</span></a>
 										</li>
 										<li>
-											<a href="#">新秀菜谱<span>最新的优秀菜谱</span></a>
+											<a href="javascript:void(0);">新秀菜谱<span>最新的优秀菜谱</span></a>
 										</li>
 										<li>
-											<a href="#">所有分类<span>每天的神奇饭盒</span></a>
+											<a href="javascript:void(0);">所有分类<span>每天的神奇饭盒</span></a>
 										</li>
 									</ul>
 								</div>
 							</li>
 							<li>
-								<a href="#"><i></i>食材大全<b></b></a>
+								<a href="javascript:void(0);"><i></i>食材大全<b></b></a>
 								<div class="sub_list">
 									<ul>
 										<li>
-											<a href="#">秋葵<span>新晋VC王</span></a>
+											<a href="javascript:void(0);">秋葵<span>新晋VC王</span></a>
 										</li>
 										<li>
-											<a href="#">西红柿<span>共3160道菜谱</span></a>
+											<a href="javascript:void(0);">西红柿<span>共3160道菜谱</span></a>
 										</li>
 										<li>
-											<a href="#">黑木耳<span>百搭配菜，防雾霾</span></a>
+											<a href="javascript:void(0);">黑木耳<span>百搭配菜，防雾霾</span></a>
 										</li>
 										<li>
-											<a href="#">小龙虾<span>红到勾心，辣到流泪</span></a>
+											<a href="javascript:void(0);">小龙虾<span>红到勾心，辣到流泪</span></a>
 										</li>
 										<li>
-											<a href="#">螃蟹<span>全民爆红</span></a>
+											<a href="javascript:void(0);">螃蟹<span>全民爆红</span></a>
 										</li>
 										<li>
-											<a href="#">鸡翅<span>共1156道菜谱</span></a>
+											<a href="javascript:void(0);">鸡翅<span>共1156道菜谱</span></a>
 										</li>
 										<li>
-											<a href="#">肉禽蛋<span>共231种</span></a>
+											<a href="javascript:void(0);">肉禽蛋<span>共231种</span></a>
 										</li>
 										<li>
-											<a href="#">水产品<span>共288种</span></a>
+											<a href="javascript:void(0);">水产品<span>共288种</span></a>
 										</li>
 										<li>
-											<a href="#">蔬菜瓜菌<span>共473种</span></a>
+											<a href="javascript:void(0);">蔬菜瓜菌<span>共473种</span></a>
 										</li>
 										<li>
-											<a href="#">鲜果干果<span>共196种</span></a>
+											<a href="javascript:void(0);">鲜果干果<span>共196种</span></a>
 										</li>
 										<li>
-											<a href="#">米面豆乳<span>共180种</span></a>
+											<a href="javascript:void(0);">米面豆乳<span>共180种</span></a>
 										</li>
 										<li>
-											<a href="#">营养排行<span>看看谁TOP!</span></a>
+											<a href="javascript:void(0);">营养排行<span>看看谁TOP!</span></a>
 										</li>
 									</ul>
 								</div>
 							</li>
 							<li>
-								<a href="#"><i></i>饮食健康<b></b></a>
+								<a href="javascript:void(0);"><i></i>饮食健康<b></b></a>
 								<div class="sub_list">
 									<ul>
 										<li>
-											<a href="#">最新推荐<span>饮食健康知识</span></a>
+											<a href="javascript:void(0);">最新推荐<span>饮食健康知识</span></a>
 										</li>
 										<li>
-											<a href="#">饮食常识<span>健康常识</span></a>
+											<a href="javascript:void(0);">饮食常识<span>健康常识</span></a>
 										</li>
 										<li>
-											<a href="#">瘦身美容<span>应该知道的小知识</span></a>
+											<a href="javascript:void(0);">瘦身美容<span>应该知道的小知识</span></a>
 										</li>
 										<li>
-											<a href="#">气血双补<span>食疗专题</span></a>
+											<a href="javascript:void(0);">气血双补<span>食疗专题</span></a>
 										</li>
 										<li>
-											<a href="#">痛经<span>痛经吃什么好</span></a>
+											<a href="javascript:void(0);">痛经<span>痛经吃什么好</span></a>
 										</li>
 										<li>
-											<a href="#">驱寒暖身<span>有温度的食材</span></a>
+											<a href="javascript:void(0);">驱寒暖身<span>有温度的食材</span></a>
 										</li>
 										<li>
-											<a href="#">对抗雾霾<span>雾霾天吃什么</span></a>
+											<a href="javascript:void(0);">对抗雾霾<span>雾霾天吃什么</span></a>
 										</li>
 										<li>
-											<a href="#">失眠<span>失眠吃什么好</span></a>
+											<a href="javascript:void(0);">失眠<span>失眠吃什么好</span></a>
 										</li>
 										<li>
-											<a href="#">食疗食补<span>常见症状的食疗专题</span></a>
+											<a href="javascript:void(0);">食疗食补<span>常见症状的食疗专题</span></a>
 										</li>
 
 									</ul>
 								</div>
 							</li>
 							<li>
-								<a href="#"><i></i>专题专区<b></b></a>
+								<a href="javascript:void(0);"><i></i>专题专区<b></b></a>
 								<div class="sub_list">
 									<ul>
 										<li>
-											<a href="#">菜单<span>由网友创建的专题</span></a>
+											<a href="javascript:void(0);">菜单<span>由网友创建的专题</span></a>
 										</li>
 										<li>
-											<a href="#">家常菜谱<span>居家必备368款</span></a>
+											<a href="javascript:void(0);">家常菜谱<span>居家必备368款</span></a>
 										</li>
 										<li>
-											<a href="#">食疗食补<span>共212个专题</span></a>
+											<a href="javascript:void(0);">食疗食补<span>共212个专题</span></a>
 										</li>
 										<li class="pic">
-											<a href="#"><img src="img/index_img/mamapai.jpg" /></a>
+											<a href="javascript:void(0);"><img src="img/index_img/mamapai.jpg" /></a>
 										</li>
 										<li class="pic">
-											<a href="#"><img src="img/index_img/hongbei.jpg" /></a>
+											<a href="javascript:void(0);"><img src="img/index_img/hongbei.jpg" /></a>
 										</li>
 									</ul>
 								</div>
 							</li>
 							<li>
-								<a href="#"><i></i>一起红<b></b></a>
+								<a href="javascript:void(0);"><i></i>一起红<b></b></a>
 								<div class="sub_list">
 									<ul>
 										<li class="pic2">
-											<a href="#"><img src="img/index_img/erweima.jpg" /></a>
+											<a href="javascript:void(0);"><img src="img/index_img/erweima.jpg" /></a>
 										</li>
 										<li class="pic2">
-											<a href="#"><img src="img/index_img/tu.jpg" /></a>
+											<a href="javascript:void(0);"><img src="img/index_img/tu.jpg" /></a>
 										</li>
 									</ul>
 								</div>
@@ -219,13 +219,13 @@
 				<div class="banner_2 clear container">
 					<div class="slidesContainer">
 						<ul :style="{width:303*len + 'px',transform:`translate(-${activeIndex*100/len}%)`,transition:isResetIndex? '': `transform ${transitionInterval/1000}s`}">
-							<li class="slide" v-for="(li,index) in imgsComputed">
+							<li class="slide" v-for="(item,index) in msg" :key="index">
 								<h2>
-								<a href="#">{{li.title}}</a>
+								<router-link :to="`/details/${item.recipe_id}`">{{item.recipe_name}}</router-link>
 							</h2>
 								<p>
-									<span v-html="li.user"></span>
-									<br> {{li.content}}
+									<span>{{item.user_name}}</span>
+									<br> {{item.qiaomen|Indexqiaomen}}
 								</p>
 							</li>
 
@@ -242,90 +242,90 @@
 					<div class="one banner_3_live fl">
 						<div class="title">
 							<div class="titleContainer">
-								<h2 class="on">健康</h2>
-								<h2>食疗</h2>
-								<a href="#">健康首页</a>
+								<h2 :class="{on:clickOnState.jiankang == 1}" @click="clickOn(1)">健康</h2>
+								<h2 :class="{on:clickOnState.shiliao == 1}" @click="clickOn(2)">食疗</h2>
+								<router-link to="/recipe">健康首页</router-link>
 							</div>
 
 						</div>
-						<div class="live on" >
-							<a href="#"><img src="img/index_img/2018102315402624954518197577.jpg" /></a>
+						<div :class="{on:clickOnState.jiankang == 1,live:true}">
+							<a href="javascript:void(0);"><img src="img/index_img/2018102315402624954518197577.jpg" /></a>
 							<ul>
 								<li>
-									<a href="#">孕期真的要多吃水果么？</a>
+									<a href="javascript:void(0);">孕期真的要多吃水果么？</a>
 								</li>
 								<li>
-									<a href="#">秋天壮阳补肾，这些实物最适合男性食</a>
+									<a href="javascript:void(0);">秋天壮阳补肾，这些实物最适合男性食</a>
 								</li>
 								<li>
-									<a href="#">便秘不是病，解不出来真要命</a>
+									<a href="javascript:void(0);">便秘不是病，解不出来真要命</a>
 								</li>
 								<li>
-									<a href="#">秋天心血管疾病高发，如何保护血管？</a>
+									<a href="javascript:void(0);">秋天心血管疾病高发，如何保护血管？</a>
 								</li>
 								<li>
-									<a href="#">专题｜那些美颜食物的神级吃法</a>
+									<a href="javascript:void(0);">专题｜那些美颜食物的神级吃法</a>
 								</li>
 								<li>
-									<a href="#">专题｜低卡减肥餐，让你瘦到飞起来</a>
+									<a href="javascript:void(0);">专题｜低卡减肥餐，让你瘦到飞起来</a>
 								</li>
 							</ul>
 						</div>
-						<div class="live " >
+						<div :class="{on:clickOnState.shiliao == 1,live:true}">
 							<ul>
 								<li>
-									<a href="#">瘦身</a>
+									<a href="javascript:void(0);">瘦身</a>
 								</li>
 								<li>
-									<a href="#">丰胸</a>
+									<a href="javascript:void(0);">丰胸</a>
 								</li>
 								<li>
-									<a href="#">养颜</a>
+									<a href="javascript:void(0);">养颜</a>
 								</li>
 								<li>
-									<a href="#">排毒</a>
+									<a href="javascript:void(0);">排毒</a>
 								</li>
 								<li>
-									<a href="#">补钙</a>
+									<a href="javascript:void(0);">补钙</a>
 								</li>
 								<li>
-									<a href="#">贫血</a>
+									<a href="javascript:void(0);">贫血</a>
 								</li>
 								<li>
-									<a href="#">滋阴</a>
+									<a href="javascript:void(0);">滋阴</a>
 								</li>
 								<li>
-									<a href="#">壮阳</a>
+									<a href="javascript:void(0);">壮阳</a>
 								</li>
 								<li>
-									<a href="#">失眠</a>
+									<a href="javascript:void(0);">失眠</a>
 								</li>
 								<li>
-									<a href="#">消暑</a>
+									<a href="javascript:void(0);">消暑</a>
 								</li>
 								<li>
-									<a href="#">免疫力</a>
+									<a href="javascript:void(0);">免疫力</a>
 								</li>
 								<li>
-									<a href="#">养胃</a>
+									<a href="javascript:void(0);">养胃</a>
 								</li>
 								<li>
-									<a href="#">痛经</a>
+									<a href="javascript:void(0);">痛经</a>
 								</li>
 								<li>
-									<a href="#">月经不调</a>
+									<a href="javascript:void(0);">月经不调</a>
 								</li>
 								<li>
-									<a href="#">前列腺</a>
+									<a href="javascript:void(0);">前列腺</a>
 								</li>
 								<li>
-									<a href="#">抗衰老</a>
+									<a href="javascript:void(0);">抗衰老</a>
 								</li>
 								<li>
-									<a href="#">防辐射</a>
+									<a href="javascript:void(0);">防辐射</a>
 								</li>
 								<li>
-									<a href="#">抗雾霾</a>
+									<a href="javascript:void(0);">抗雾霾</a>
 								</li>
 							</ul>
 						</div>
@@ -333,90 +333,90 @@
 					<div class="two banner_3_live fl">
 						<div class="title">
 							<div class="titleContainer">
-								<h2 class="on">烘培</h2>
-								<h2>食谱</h2>
-								<a href="#">烘培专区</a>
+								<h2 :class="{on:clickOnState.hongpei == 1}" @click="clickOn(3)">烘培</h2>
+								<h2 :class="{on:clickOnState.shipu == 1}" @click="clickOn(4)">食谱</h2>
+								<a href="javascript:void(0);">烘培专区</a>
 							</div>
 
 						</div>
-						<div class="live on">
-							<a href="#"><img src="img/index_img/2018052515272151272158197577.jpg" /></a>
+						<div :class="{on:clickOnState.hongpei == 1,live:true}">
+							<a href="javascript:void(0);"><img src="img/index_img/2018052515272151272158197577.jpg" /></a>
 							<ul>
 								<li>
-									<a href="#">蔓越莓蜜豆软欧早餐包</a>
+									<a href="javascript:void(0);">蔓越莓蜜豆软欧早餐包</a>
 								</li>
 								<li>
-									<a href="#">自制美味的花生牛轧糖</a>
+									<a href="javascript:void(0);">自制美味的花生牛轧糖</a>
 								</li>
 								<li>
-									<a href="#">内藏惊喜的彩虹戚风蛋糕</a>
+									<a href="javascript:void(0);">内藏惊喜的彩虹戚风蛋糕</a>
 								</li>
 								<li>
-									<a href="#">消耗蛋挞皮-简单版红薯酥</a>
+									<a href="javascript:void(0);">消耗蛋挞皮-简单版红薯酥</a>
 								</li>
 								<li>
-									<a href="#">菜单｜奥利奥的N种百搭吃法</a>
+									<a href="javascript:void(0);">菜单｜奥利奥的N种百搭吃法</a>
 								</li>
 								<li>
-									<a href="#">专题｜另类咸香口儿 满足你的味蕾！</a>
+									<a href="javascript:void(0);">专题｜另类咸香口儿 满足你的味蕾！</a>
 								</li>
 							</ul>
 						</div>
-						<div class="live ">
+						<div :class="{on:clickOnState.shipu == 1,live:true}">
 							<ul>
 								<li>
-									<a href="#">土司</a>
+									<a href="javascript:void(0);">土司</a>
 								</li>
 								<li>
-									<a href="#">三明治</a>
+									<a href="javascript:void(0);">三明治</a>
 								</li>
 								<li>
-									<a href="#">马芬</a>
+									<a href="javascript:void(0);">马芬</a>
 								</li>
 								<li>
-									<a href="#">布朗尼</a>
+									<a href="javascript:void(0);">布朗尼</a>
 								</li>
 								<li>
-									<a href="#">蛋糕卷</a>
+									<a href="javascript:void(0);">蛋糕卷</a>
 								</li>
 								<li>
-									<a href="#">玛德琳</a>
+									<a href="javascript:void(0);">玛德琳</a>
 								</li>
 								<li>
-									<a href="#">舒芙蕾</a>
+									<a href="javascript:void(0);">舒芙蕾</a>
 								</li>
 								<li>
-									<a href="#">纸杯蛋糕</a>
+									<a href="javascript:void(0);">纸杯蛋糕</a>
 								</li>
 								<li>
-									<a href="#">戚风</a>
+									<a href="javascript:void(0);">戚风</a>
 								</li>
 								<li>
-									<a href="#">马卡龙</a>
+									<a href="javascript:void(0);">马卡龙</a>
 								</li>
 								<li>
-									<a href="#">糖霜饼干</a>
+									<a href="javascript:void(0);">糖霜饼干</a>
 								</li>
 								<li>
-									<a href="#">曲奇</a>
+									<a href="javascript:void(0);">曲奇</a>
 								</li>
 								<li>
-									<a href="#">披萨</a>
+									<a href="javascript:void(0);">披萨</a>
 								</li>
 								<li>
-									<a href="#">泡芙</a>
+									<a href="javascript:void(0);">泡芙</a>
 								</li>
 								<li>
-									<a href="#">蛋挞</a>
+									<a href="javascript:void(0);">蛋挞</a>
 								</li>
 								<li>
-									<a href="#">派塔</a>
+									<a href="javascript:void(0);">派塔</a>
 								</li>
 								<li>
-									<a href="#">中式糕点</a>
+									<a href="javascript:void(0);">中式糕点</a>
 								</li>
 								<li>
-									<a href="#">酥</a>
+									<a href="javascript:void(0);">酥</a>
 								</li>
 							</ul>
 						</div>
@@ -426,30 +426,30 @@
 							<div class="titleContainer">
 								<h2 class="on">为您推荐</h2>
 								<h2></h2>
-								<a href="#">我的收藏</a>
+								<a href="javascript:void(0);">我的收藏</a>
 							</div>
 
 						</div>
 						<div class="live on">
-							<a href="#"><img src="img/index_img/2018102215401754008228197577.jpg" /></a>
+							<a href="javascript:void(0);"><img src="img/index_img/2018102215401754008228197577.jpg" /></a>
 							<ul>
 								<li>
-									<a href="#">秋季天干物燥，小心“便秘”</a>
+									<a href="javascript:void(0);">秋季天干物燥，小心“便秘”</a>
 								</li>
 								<li>
-									<a href="#">划重点！食物降血脂这些更有效</a>
+									<a href="javascript:void(0);">划重点！食物降血脂这些更有效</a>
 								</li>
 								<li>
-									<a href="#">粗粮细作：健康能量燕麦甜品</a>
+									<a href="javascript:void(0);">粗粮细作：健康能量燕麦甜品</a>
 								</li>
 								<li>
-									<a href="#">妈妈派｜童趣童味，儿童创意餐点</a>
+									<a href="javascript:void(0);">妈妈派｜童趣童味，儿童创意餐点</a>
 								</li>
 								<li>
-									<a href="#">免费抽奖｜ACA多功能辅食料理机</a>
+									<a href="javascript:void(0);">免费抽奖｜ACA多功能辅食料理机</a>
 								</li>
 								<li>
-									<a href="#">免费抽奖｜Haier海尔智能烤箱（活力黄）</a>
+									<a href="javascript:void(0);">免费抽奖｜Haier海尔智能烤箱（活力黄）</a>
 								</li>
 							</ul>
 						</div>
@@ -461,403 +461,64 @@
 				<div class="banner_4 clear">
 					<div class="title">
 						<div class="titleContainer">
-							<h2 class="on">新秀菜谱</h2>
-							<h2>一周热门</h2>
-							<h2>最受欢迎的家常菜</h2>
+							<h2 :class="{on:clickOnState.xinxiucaipu == 1}" @click="clickOn(5)">新秀菜谱</h2>
+							<h2 :class="{on:clickOnState.yizhouremen == 1}" @click="clickOn(6)">一周热门</h2>
+							<h2 :class="{on:clickOnState.huanying == 1}" @click="clickOn(7)">最受欢迎的家常菜</h2>
 							<ul class="fl">
 								<li>
-									<a href="#">热菜</a>
+									<a href="javascript:void(0);">热菜</a>
 								</li>
 								<li>
-									<a href="#">凉菜</a>
+									<a href="javascript:void(0);">凉菜</a>
 								</li>
 								<li>
-									<a href="#">汤羹</a>
+									<a href="javascript:void(0);">汤羹</a>
 								</li>
 								<li>
-									<a href="#">主食</a>
+									<a href="javascript:void(0);">主食</a>
 								</li>
 								<li>
-									<a href="#">小吃</a>
+									<a href="javascript:void(0);">小吃</a>
 								</li>
 								<li>
-									<a href="#">西餐</a>
+									<a href="javascript:void(0);">西餐</a>
 								</li>
 								<li>
-									<a href="#">菜谱首页</a>
+									<router-link to="/recipe">菜谱首页</router-link>
 								</li>
 							</ul>
 						</div>
 					</div>
-					<div class="big_list clear on">
+					<div :class="{big_list:true,clear:true,on:clickOnState.xinxiucaipu == 1}">
 						<ul>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402610147639702111.jpg"/></i>
-									<p>辣椒拌香菜</p>
-								</a>
-								<a href="#" class="user">撒东东</a>
+							<li v-for="(item,index) in newlink" :key="index">
+								<router-link :to="`/details/${item.recipe_id}`"><i><img :src="item.recipe_pic"/></i>
+									<p>{{item.recipe_name}}</p>
+								</router-link>
+								<router-link :to="`/details/${item.recipe_id}`" class="user">{{item.user_name}}</router-link>
 							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402611205139702111.jpg"/></i>
-									<p>番茄肉酱拌面</p>
-								</a>
-								<a href="#" class="user">山东省</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402613544779702111.jpg"/></i>
-									<p>秋梨香甜拌莲藕</p>
-								</a>
-								<a href="#" class="user">菲菲</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402614729939702111.jpg"/></i>
-									<p>西兰花拌豆芽</p>
-								</a>
-								<a href="#" class="user">根根倒</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402615762849702111.jpg"/></i>
-									<p>清炒茼蒿</p>
-								</a>
-								<a href="#" class="user">横放</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402617761649702111.jpg"/></i>
-									<p>白菜胡萝卜包</p>
-								</a>
-								<a href="#" class="user">撒旦</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402619367279702111.jpg"/></i>
-									<p>鲫鱼烤葱</p>
-								</a>
-								<a href="#" class="user">送死</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402619367279702111.jpg"/></i>
-									<p>白萝卜牛肉烧麦</p>
-								</a>
-								<a href="#" class="user">sadsad5</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402619968499702111.jpg"/></i>
-									<p>桂花茶</p>
-								</a>
-								<a href="#" class="user">dsad54</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402620634459702111.jpg"/></i>
-									<p>扁豆干烧肉</p>
-								</a>
-								<a href="#" class="user">的撒旦</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402622016029702111.jpg"/></i>
-									<p>海鲜面</p>
-								</a>
-								<a href="#" class="user">25s2</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402622759129702111.jpg"/></i>
-									<p>奶香南瓜鸡肉焗饭</p>
-								</a>
-								<a href="#" class="user">啊啊啊</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402625024789702111.jpg"/></i>
-									<p>红烧小萝卜</p>
-								</a>
-								<a href="#" class="user">恩讷讷</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402625933049702111.jpg"/></i>
-									<p>腊鸭腿蒸腐竹</p>
-								</a>
-								<a href="#" class="user">545sad</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402654803149702111.jpg"/></i>
-									<p>秋葵炒肉</p>
-								</a>
-								<a href="#" class="user">撒旦</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402717962069702111.jpg"/></i>
-									<p>鸭蛋烧圆白菜</p>
-								</a>
-								<a href="#" class="user">团伙团</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402750911789702111.jpg"/></i>
-									<p>双色椰浆面包</p>
-								</a>
-								<a href="#" class="user">哼均衡</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402752403739702111.jpg"/></i>
-									<p>沙皮狗慕斯蛋糕</p>
-								</a>
-								<a href="#" class="user">团体</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402797467649702111.jpg"/></i>
-									<p>巧克力乳酪蛋糕</p>
-								</a>
-								<a href="#" class="user">哦戳吃</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402798102069702111.jpg"/></i>
-									<p>红枣蛋糕</p>
-								</a>
-								<a href="#" class="user">送死</a>
-							</li>
+
 						</ul>
 					</div>
-					<div class="big_list clear">
+					<div :class="{big_list:true,clear:true,on:clickOnState.yizhouremen == 1}">
 						<ul>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402610147639702111.jpg"/></i>
-									<p>辣椒拌香菜</p>
-								</a>
-								<a href="#" class="user">撒东东</a>
+							<li v-for="(item,index) in hotlink" :key="index">
+								<router-link :to="`/details/${item.recipe_id}`"><i><img :src="item.recipe_pic"/></i>
+									<p>{{item.recipe_name}}</p>
+								</router-link>
+								<router-link :to="`/details/${item.recipe_id}`" class="user">{{item.user_name}}</router-link>
 							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402611205139702111.jpg"/></i>
-									<p>番茄肉酱拌面</p>
-								</a>
-								<a href="#" class="user">山东省</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402613544779702111.jpg"/></i>
-									<p>秋梨香甜拌莲藕</p>
-								</a>
-								<a href="#" class="user">菲菲</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402614729939702111.jpg"/></i>
-									<p>西兰花拌豆芽</p>
-								</a>
-								<a href="#" class="user">根根倒</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402615762849702111.jpg"/></i>
-									<p>清炒茼蒿</p>
-								</a>
-								<a href="#" class="user">横放</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402617761649702111.jpg"/></i>
-									<p>白菜胡萝卜包</p>
-								</a>
-								<a href="#" class="user">撒旦</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402619367279702111.jpg"/></i>
-									<p>鲫鱼烤葱</p>
-								</a>
-								<a href="#" class="user">送死</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402619367279702111.jpg"/></i>
-									<p>白萝卜牛肉烧麦</p>
-								</a>
-								<a href="#" class="user">sadsad5</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402619968499702111.jpg"/></i>
-									<p>桂花茶</p>
-								</a>
-								<a href="#" class="user">dsad54</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402620634459702111.jpg"/></i>
-									<p>扁豆干烧肉</p>
-								</a>
-								<a href="#" class="user">的撒旦</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402622016029702111.jpg"/></i>
-									<p>海鲜面</p>
-								</a>
-								<a href="#" class="user">25s2</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402622759129702111.jpg"/></i>
-									<p>奶香南瓜鸡肉焗饭</p>
-								</a>
-								<a href="#" class="user">啊啊啊</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402625024789702111.jpg"/></i>
-									<p>红烧小萝卜</p>
-								</a>
-								<a href="#" class="user">恩讷讷</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402625933049702111.jpg"/></i>
-									<p>腊鸭腿蒸腐竹</p>
-								</a>
-								<a href="#" class="user">545sad</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402654803149702111.jpg"/></i>
-									<p>秋葵炒肉</p>
-								</a>
-								<a href="#" class="user">撒旦</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402717962069702111.jpg"/></i>
-									<p>鸭蛋烧圆白菜</p>
-								</a>
-								<a href="#" class="user">团伙团</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402750911789702111.jpg"/></i>
-									<p>双色椰浆面包</p>
-								</a>
-								<a href="#" class="user">哼均衡</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402752403739702111.jpg"/></i>
-									<p>沙皮狗慕斯蛋糕</p>
-								</a>
-								<a href="#" class="user">团体</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402797467649702111.jpg"/></i>
-									<p>巧克力乳酪蛋糕</p>
-								</a>
-								<a href="#" class="user">哦戳吃</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402798102069702111.jpg"/></i>
-									<p>红枣蛋糕</p>
-								</a>
-								<a href="#" class="user">送死</a>
-							</li>
+
 						</ul>
 					</div>
-					<div class="big_list clear">
+					<div :class="{big_list:true,clear:true,on:clickOnState.huanying == 1}">
 						<ul>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402610147639702111.jpg"/></i>
-									<p>辣椒拌香菜</p>
-								</a>
-								<a href="#" class="user">撒东东</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402611205139702111.jpg"/></i>
-									<p>番茄肉酱拌面</p>
-								</a>
-								<a href="#" class="user">山东省</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402613544779702111.jpg"/></i>
-									<p>秋梨香甜拌莲藕</p>
-								</a>
-								<a href="#" class="user">菲菲</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402614729939702111.jpg"/></i>
-									<p>西兰花拌豆芽</p>
-								</a>
-								<a href="#" class="user">根根倒</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402615762849702111.jpg"/></i>
-									<p>清炒茼蒿</p>
-								</a>
-								<a href="#" class="user">横放</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402617761649702111.jpg"/></i>
-									<p>白菜胡萝卜包</p>
-								</a>
-								<a href="#" class="user">撒旦</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402619367279702111.jpg"/></i>
-									<p>鲫鱼烤葱</p>
-								</a>
-								<a href="#" class="user">送死</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402619367279702111.jpg"/></i>
-									<p>白萝卜牛肉烧麦</p>
-								</a>
-								<a href="#" class="user">sadsad5</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402619968499702111.jpg"/></i>
-									<p>桂花茶</p>
-								</a>
-								<a href="#" class="user">dsad54</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402620634459702111.jpg"/></i>
-									<p>扁豆干烧肉</p>
-								</a>
-								<a href="#" class="user">的撒旦</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402622016029702111.jpg"/></i>
-									<p>海鲜面</p>
-								</a>
-								<a href="#" class="user">25s2</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402622759129702111.jpg"/></i>
-									<p>奶香南瓜鸡肉焗饭</p>
-								</a>
-								<a href="#" class="user">啊啊啊</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402625024789702111.jpg"/></i>
-									<p>红烧小萝卜</p>
-								</a>
-								<a href="#" class="user">恩讷讷</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402625933049702111.jpg"/></i>
-									<p>腊鸭腿蒸腐竹</p>
-								</a>
-								<a href="#" class="user">545sad</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402654803149702111.jpg"/></i>
-									<p>秋葵炒肉</p>
-								</a>
-								<a href="#" class="user">撒旦</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402717962069702111.jpg"/></i>
-									<p>鸭蛋烧圆白菜</p>
-								</a>
-								<a href="#" class="user">团伙团</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402750911789702111.jpg"/></i>
-									<p>双色椰浆面包</p>
-								</a>
-								<a href="#" class="user">哼均衡</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402752403739702111.jpg"/></i>
-									<p>沙皮狗慕斯蛋糕</p>
-								</a>
-								<a href="#" class="user">团体</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402797467649702111.jpg"/></i>
-									<p>巧克力乳酪蛋糕</p>
-								</a>
-								<a href="#" class="user">哦戳吃</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402798102069702111.jpg"/></i>
-									<p>红枣蛋糕</p>
-								</a>
-								<a href="#" class="user">送死</a>
+
+							<li v-for="(item,index) in wellink" :key="index">
+								<router-link :to="`/details/${item.recipe_id}`"><i><img :src="item.recipe_pic"/></i>
+									<p>{{item.recipe_name}}</p>
+								</router-link>
+								<router-link :to="`/details/${item.recipe_id}`" class="user">{{item.user_name}}</router-link>
 							</li>
 						</ul>
 					</div>
@@ -869,19 +530,19 @@
 
 							<ul class="fl">
 								<li>
-									<a href="#">肉禽蛋</a>
+									<a href="javascript:void(0);">肉禽蛋</a>
 								</li>
 								<li>
-									<a href="#">水产品</a>
+									<a href="javascript:void(0);">水产品</a>
 								</li>
 								<li>
-									<a href="#">蔬菜</a>
+									<a href="javascript:void(0);">蔬菜</a>
 								</li>
 								<li>
-									<a href="#">米面豆乳</a>
+									<a href="javascript:void(0);">米面豆乳</a>
 								</li>
 								<li>
-									<a href="#">食材首页</a>
+									<a href="javascript:void(0);">食材首页</a>
 								</li>
 							</ul>
 						</div>
@@ -889,88 +550,88 @@
 					<div class="big_list clear">
 						<ul>
 							<li>
-								<a href="#"><i><img src="img/index_img/qiukui.png"/></i>
+								<a href="javascript:void(0);"><i><img src="img/index_img/qiukui.png"/></i>
 									<p>秋葵</p>
 								</a>
-								<a href="#" class="user">摘下星星送给你</a>
+								<a href="javascript:void(0);" class="user">摘下星星送给你</a>
 							</li>
 							<li>
-								<a href="#"><i><img src="img/index_img/nangua.jpg"/></i>
+								<a href="javascript:void(0);"><i><img src="img/index_img/nangua.jpg"/></i>
 									<p>南瓜</p>
 								</a>
-								<a href="#" class="user">山东省</a>
+								<a href="javascript:void(0);" class="user">山东省</a>
 							</li>
 							<li>
-								<a href="#"><i><img src="img/index_img/yutou.jpg"/></i>
+								<a href="javascript:void(0);"><i><img src="img/index_img/yutou.jpg"/></i>
 									<p>芋头</p>
 								</a>
-								<a href="#" class="user">菲菲</a>
+								<a href="javascript:void(0);" class="user">菲菲</a>
 							</li>
 							<li>
-								<a href="#"><i><img src="img/index_img/li.png"/></i>
+								<a href="javascript:void(0);"><i><img src="img/index_img/li.png"/></i>
 									<p>梨</p>
 								</a>
-								<a href="#" class="user">根根倒</a>
+								<a href="javascript:void(0);" class="user">根根倒</a>
 							</li>
 							<li>
-								<a href="#"><i><img src="img/index_img/lianou.jpg"/></i>
+								<a href="javascript:void(0);"><i><img src="img/index_img/lianou.jpg"/></i>
 									<p>莲藕</p>
 								</a>
-								<a href="#" class="user">横放</a>
+								<a href="javascript:void(0);" class="user">横放</a>
 							</li>
 							<li>
-								<a href="#"><i><img src="img/index_img/shanyao.jpg"/></i>
+								<a href="javascript:void(0);"><i><img src="img/index_img/shanyao.jpg"/></i>
 									<p>山药</p>
 								</a>
-								<a href="#" class="user">撒旦</a>
+								<a href="javascript:void(0);" class="user">撒旦</a>
 							</li>
 							<li>
-								<a href="#"><i><img src="img/index_img/heimuer.jpg"/></i>
+								<a href="javascript:void(0);"><i><img src="img/index_img/heimuer.jpg"/></i>
 									<p>黑木耳</p>
 								</a>
-								<a href="#" class="user">送死</a>
+								<a href="javascript:void(0);" class="user">送死</a>
 							</li>
 							<li>
-								<a href="#"><i><img src="img/index_img/pangxie.jpg"/></i>
+								<a href="javascript:void(0);"><i><img src="img/index_img/pangxie.jpg"/></i>
 									<p>螃蟹</p>
 								</a>
-								<a href="#" class="user">sadsad5</a>
+								<a href="javascript:void(0);" class="user">sadsad5</a>
 							</li>
 							<li>
-								<a href="#"><i><img src="img/index_img/xia.jpg"/></i>
+								<a href="javascript:void(0);"><i><img src="img/index_img/xia.jpg"/></i>
 									<p>虾</p>
 								</a>
-								<a href="#" class="user">dsad54</a>
+								<a href="javascript:void(0);" class="user">dsad54</a>
 							</li>
 							<li>
-								<a href="#"><i><img src="img/index_img/zhuti.jpg"/></i>
+								<a href="javascript:void(0);"><i><img src="img/index_img/zhuti.jpg"/></i>
 									<p>猪蹄</p>
 								</a>
-								<a href="#" class="user">的撒旦</a>
+								<a href="javascript:void(0);" class="user">的撒旦</a>
 							</li>
 							<li>
-								<a href="#"><i><img src="img/index_img/youyu.png"/></i>
+								<a href="javascript:void(0);"><i><img src="img/index_img/youyu.png"/></i>
 									<p>鱿鱼</p>
 								</a>
-								<a href="#" class="user">25s2</a>
+								<a href="javascript:void(0);" class="user">25s2</a>
 							</li>
 							<li>
-								<a href="#"><i><img src="img/index_img/jixiongrou.png"/></i>
+								<a href="javascript:void(0);"><i><img src="img/index_img/jixiongrou.png"/></i>
 									<p>鸡胸肉</p>
 								</a>
-								<a href="#" class="user">啊啊啊</a>
+								<a href="javascript:void(0);" class="user">啊啊啊</a>
 							</li>
 							<li>
-								<a href="#"><i><img src="img/index_img/jichi.jpg"/></i>
+								<a href="javascript:void(0);"><i><img src="img/index_img/jichi.jpg"/></i>
 									<p>鸡翅</p>
 								</a>
-								<a href="#" class="user">恩讷讷</a>
+								<a href="javascript:void(0);" class="user">恩讷讷</a>
 							</li>
 							<li>
-								<a href="#"><i><img src="img/index_img/paigu.jpg"/></i>
+								<a href="javascript:void(0);"><i><img src="img/index_img/paigu.jpg"/></i>
 									<p>排骨</p>
 								</a>
-								<a href="#" class="user">545sad</a>
+								<a href="javascript:void(0);" class="user">545sad</a>
 							</li>
 
 						</ul>
@@ -979,540 +640,51 @@
 				<div class="banner_6 clear">
 					<div class="title">
 						<div class="titleContainer">
-							<h2 class="on">热门话题</h2>
-							<h2>精华日志</h2>
+							<h2 :class="{on:clickOnState.remenhuati == 1}" @click="clickOn(8)">热门话题</h2>
+							<h2 :class="{on:clickOnState.jinghuarizhi == 1}" @click="clickOn(9)">精华日志</h2>
 							<h2></h2>
 							<ul class="">
 								<li>
-									<a href="#">全部话题</a>
+									<router-link to="/communityheader/topic">全部话题</router-link>
 								</li>
 								<li>
-									<a href="#">全部日志</a>
+									<router-link to="/communityheader/rizhi">全部日志</router-link>
 								</li>
 								<li>
-									<a href="#">社区首页</a>
+									<router-link to="/communityheader">社区首页</router-link>
 								</li>
 							</ul>
 						</div>
 					</div>
-					<div class="big_list clear on index">
+					<div :class="{big_list:true,clear:true,index:true,on:clickOnState.remenhuati == 1}">
 						<ul>
-							<li>
+							<li v-for="(item,index) in topic" :key="index">
 								<div class="user">
-									<a href="#"><img src="img/index_img/82_avatar_big.jpg" /></a>
+									<router-link to="/communityheader/topic"><img :src="item.upic" /></router-link>
 									<div class="user_msg">
-										<a href="#">诗韵墨香</a>
+										<router-link to="/communityheader/topic">{{item.user_name}}</router-link>
 										<span>4小时前</span>
 									</div>
 								</div>
 								<div class="pinglun">
-									<a href="#">#你好，美天#，下午茶！</a>
-									<a href="#">
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-									</a>
+									<router-link to="/communityheader/topic">{{item.t_title}}，{{item.t_disc}}</router-link>
+									<router-link to="/communityheader/topic">
+										<img v-for="(src,num) in item.pic" :src="src" />
+										
+									</router-link>
 									<span>6个喜欢8个评论</span>
 								</div>
 							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/62_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">江南布衣</a>
-										<span>6小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#午餐#，自制酸奶！</a>
-									<a href="#">
-										<img src="img/index_img/20181024154036624393110606182.jpg" />
-										<img src="img/index_img/27_avatar_big.jpg" />
-										<img src="img/index_img/20181024154036624387710606182.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/82_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">诗韵墨香</a>
-										<span>4小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#你好，美天#，下午茶！</a>
-									<a href="#">
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/62_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">江南布衣</a>
-										<span>6小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#午餐#，自制酸奶！</a>
-									<a href="#">
-										<img src="img/index_img/20181024154036624393110606182.jpg" />
-										<img src="img/index_img/27_avatar_big.jpg" />
-										<img src="img/index_img/20181024154036624387710606182.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/82_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">诗韵墨香</a>
-										<span>4小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#你好，美天#，下午茶！</a>
-									<a href="#">
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/62_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">江南布衣</a>
-										<span>6小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#午餐#，自制酸奶！</a>
-									<a href="#">
-										<img src="img/index_img/20181024154036624393110606182.jpg" />
-										<img src="img/index_img/27_avatar_big.jpg" />
-										<img src="img/index_img/20181024154036624387710606182.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/82_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">诗韵墨香</a>
-										<span>4小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#你好，美天#，下午茶！</a>
-									<a href="#">
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/62_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">江南布衣</a>
-										<span>6小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#午餐#，自制酸奶！</a>
-									<a href="#">
-										<img src="img/index_img/20181024154036624393110606182.jpg" />
-										<img src="img/index_img/27_avatar_big.jpg" />
-										<img src="img/index_img/20181024154036624387710606182.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/82_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">诗韵墨香</a>
-										<span>4小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#你好，美天#，下午茶！</a>
-									<a href="#">
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
 
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/62_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">江南布衣</a>
-										<span>6小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#午餐#，自制酸奶！</a>
-									<a href="#">
-										<img src="img/index_img/20181024154036624393110606182.jpg" />
-										<img src="img/index_img/27_avatar_big.jpg" />
-										<img src="img/index_img/20181024154036624387710606182.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/82_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">诗韵墨香</a>
-										<span>4小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#你好，美天#，下午茶！</a>
-									<a href="#">
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/62_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">江南布衣</a>
-										<span>6小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#午餐#，自制酸奶！</a>
-									<a href="#">
-										<img src="img/index_img/20181024154036624393110606182.jpg" />
-										<img src="img/index_img/27_avatar_big.jpg" />
-										<img src="img/index_img/20181024154036624387710606182.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/82_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">诗韵墨香</a>
-										<span>4小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#你好，美天#，下午茶！</a>
-									<a href="#">
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/62_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">江南布衣</a>
-										<span>6小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#午餐#，自制酸奶！</a>
-									<a href="#">
-										<img src="img/index_img/20181024154036624393110606182.jpg" />
-										<img src="img/index_img/27_avatar_big.jpg" />
-
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/82_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">诗韵墨香</a>
-										<span>4小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#你好，美天#，下午茶！</a>
-									<a href="#">
-
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/62_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">江南布衣</a>
-										<span>6小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#午餐#，自制酸奶！</a>
-									<a href="#">
-										<img src="img/index_img/20181024154036624393110606182.jpg" />
-										<img src="img/index_img/27_avatar_big.jpg" />
-										<img src="img/index_img/20181024154036624387710606182.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/82_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">诗韵墨香</a>
-										<span>4小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#你好，美天#，下午茶！</a>
-									<a href="#">
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/62_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">江南布衣</a>
-										<span>6小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#午餐#，自制酸奶！</a>
-									<a href="#">
-
-										<img src="img/index_img/27_avatar_big.jpg" />
-										<img src="img/index_img/20181024154036624387710606182.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/82_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">诗韵墨香</a>
-										<span>4小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#你好，美天#，下午茶！</a>
-									<a href="#">
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/62_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">江南布衣</a>
-										<span>6小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#午餐#，自制酸奶！</a>
-									<a href="#">
-										<img src="img/index_img/20181024154036624393110606182.jpg" />
-										<img src="img/index_img/27_avatar_big.jpg" />
-										<img src="img/index_img/20181024154036624387710606182.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/82_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">诗韵墨香</a>
-										<span>4小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#你好，美天#，下午茶！</a>
-									<a href="#">
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-										<img src="img/index_img/2018102315402614729939702111.jpg" />
-
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
-							<li>
-								<div class="user">
-									<a href="#"><img src="img/index_img/62_avatar_big.jpg" /></a>
-									<div class="user_msg">
-										<a href="#">江南布衣</a>
-										<span>6小时前</span>
-									</div>
-								</div>
-								<div class="pinglun">
-									<a href="#">#午餐#，自制酸奶！</a>
-									<a href="#">
-										<img src="img/index_img/20181024154036624393110606182.jpg" />
-										<img src="img/index_img/27_avatar_big.jpg" />
-										<img src="img/index_img/20181024154036624387710606182.jpg" />
-									</a>
-									<span>6个喜欢8个评论</span>
-								</div>
-							</li>
 						</ul>
 					</div>
-					<div class="big_list clear">
+					<div :class="{big_list:true,clear:true,on:clickOnState.jinghuarizhi == 1}">
 						<ul>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402610147639702111.jpg"/></i>
-									<p>辣椒拌香菜</p>
-								</a>
-								<a href="#" class="user">撒东东</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402611205139702111.jpg"/></i>
-									<p>番茄肉酱拌面</p>
-								</a>
-								<a href="#" class="user">山东省</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402613544779702111.jpg"/></i>
-									<p>秋梨香甜拌莲藕</p>
-								</a>
-								<a href="#" class="user">菲菲</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402614729939702111.jpg"/></i>
-									<p>西兰花拌豆芽</p>
-								</a>
-								<a href="#" class="user">根根倒</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402615762849702111.jpg"/></i>
-									<p>清炒茼蒿</p>
-								</a>
-								<a href="#" class="user">横放</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402617761649702111.jpg"/></i>
-									<p>白菜胡萝卜包</p>
-								</a>
-								<a href="#" class="user">撒旦</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402619367279702111.jpg"/></i>
-									<p>鲫鱼烤葱</p>
-								</a>
-								<a href="#" class="user">送死</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402619367279702111.jpg"/></i>
-									<p>白萝卜牛肉烧麦</p>
-								</a>
-								<a href="#" class="user">sadsad5</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402619968499702111.jpg"/></i>
-									<p>桂花茶</p>
-								</a>
-								<a href="#" class="user">dsad54</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402620634459702111.jpg"/></i>
-									<p>扁豆干烧肉</p>
-								</a>
-								<a href="#" class="user">的撒旦</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402622016029702111.jpg"/></i>
-									<p>海鲜面</p>
-								</a>
-								<a href="#" class="user">25s2</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402622759129702111.jpg"/></i>
-									<p>奶香南瓜鸡肉焗饭</p>
-								</a>
-								<a href="#" class="user">啊啊啊</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402625024789702111.jpg"/></i>
-									<p>红烧小萝卜</p>
-								</a>
-								<a href="#" class="user">恩讷讷</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402625933049702111.jpg"/></i>
-									<p>腊鸭腿蒸腐竹</p>
-								</a>
-								<a href="#" class="user">545sad</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402654803149702111.jpg"/></i>
-									<p>秋葵炒肉</p>
-								</a>
-								<a href="#" class="user">撒旦</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402717962069702111.jpg"/></i>
-									<p>鸭蛋烧圆白菜</p>
-								</a>
-								<a href="#" class="user">团伙团</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402750911789702111.jpg"/></i>
-									<p>双色椰浆面包</p>
-								</a>
-								<a href="#" class="user">哼均衡</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402752403739702111.jpg"/></i>
-									<p>沙皮狗慕斯蛋糕</p>
-								</a>
-								<a href="#" class="user">团体</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402797467649702111.jpg"/></i>
-									<p>巧克力乳酪蛋糕</p>
-								</a>
-								<a href="#" class="user">哦戳吃</a>
-							</li>
-							<li>
-								<a href="#"><i><img src="img/index_img/2018102315402798102069702111.jpg"/></i>
-									<p>红枣蛋糕</p>
-								</a>
-								<a href="#" class="user">送死</a>
+							<li v-for="(item,index) in jinghua" :key="index">
+								<router-link :to="`/details/${item.recipe_id}`"><i><img :src="item.recipe_pic"/></i>
+									<p>{{item.recipe_name}}</p>
+								</router-link>
+								<router-link :to="`/details/${item.recipe_id}`" class="user">{{item.user_name}}</router-link>
 							</li>
 						</ul>
 					</div>
@@ -1522,142 +694,45 @@
 		<div class="totop">
 			<a href="javascript:;" onclick="window.scroll(0,0)"></a>
 		</div>
+		<Footer></Footer>
 	</div>
 </template>
 
 <script>
 	import Footer from '@/views/Footer.vue'
-	//import Vue from "vue"
+
 	export default {
 		components: {
 			Footer
 		},
 		data: function() {
 			return {
-				imgArr: [{
-						src: "img/index_img/banner1.jpg",
-						id: "carrousel_img1"
-					},
-					{
-						src: "img/index_img/banner2.jpg",
-						id: "carrousel_img2"
-					},
-					{
-						src: "img/index_img/banner3.jpg",
-						id: "carrousel_img3"
-					},
-					{
-						src: "img/index_img/banner4.jpg",
-						id: "carrousel_img4"
-					},
-					{
-						src: "img/index_img/banner5.jpg",
-						id: "carrousel_img5"
-					},
-					{
-						src: "img/index_img/banner6.jpg",
-						id: "carrousel_img6"
-					}
-				],
+				imgArr: [],
 				mark: 0,
-				timer:"",
-				msg: [{
-						title: "早餐佐粥小菜",
-						user: "小美的菜单&nbsp;&nbsp;",
-						content: "早餐时来一款小咸菜，配上一碗白粥，典型的中式早餐，最值得回味的中国式味道。"
-					},
-					{
-						title: "好吃到逆天的肥牛",
-						user: "红烧苹果的菜单&nbsp;&nbsp;",
-						content: "一步到胃的烧肥牛！真的好吃到爆！假期都在吃饭、煲剧、睡觉中度过，人生真美好！"
-					},
-					{
-						title: "家常烙饼",
-						user: "芮羽宝贝的菜单&nbsp;&nbsp;",
-						content: "教你做家常烙饼的做法，营养健康又好吃，很简单一看就会！而且特别松软哦～"
-					},
-					{
-						title: "高颜值蒸菜",
-						user: "瑶妈妈的菜单&nbsp;&nbsp;",
-						content: "简单又不失美味的蒸菜，赶紧收了学起来吧！蒸出来的美味，营养又健康～"
-					},
-					{
-						title: "滋味干锅菜",
-						user: "铎子的菜单&nbsp;&nbsp;",
-						content: "慢慢煸炒入味的干香的非常诱人，光是闻着那个味就会让人直流口水~吃货们赶紧收了吧！"
-					},
-					{
-						title: "女生最爱美味甜品",
-						user: "咪咪侠的菜单&nbsp;&nbsp;",
-						content: "酸酸甜甜的美味是女生最爱，颜值高但热量低的甜品，一秒俘获你的少女心！"
-					},
-					{
-						title: "超美味的土豆做法",
-						user: "sccd1205的菜单&nbsp;&nbsp;",
-						content: "土豆这么做，既美味又有营养，大人孩子都抢着吃！如果说绝配，土豆和它天生一对！"
-					},
-					{
-						title: "美味肉类",
-						user: "天衛丶狮子座的菜单&nbsp;&nbsp;",
-						content: "简单又美味的解馋肉菜，想学的朋友们赶快来瞧瞧！有酒有肉，咱们约起来！"
-					},
-					{
-						title: "美味汤羹",
-						user: "纯种哈密瓜的菜单&nbsp;&nbsp;",
-						content: "燥的秋季，怎能少了美味又养生的汤羹呢？滋阴润燥，吃货们快收藏吧！"
-					},
-					{
-						title: "自制零食甜点",
-						user: "溪琪麻麻手作的菜单&nbsp;&nbsp;",
-						content: "甜点能让我们心情愉悦 ，一起来自制零食吧～不含防腐剂添加剂，好吃又健康！"
-					},
-					{
-						title: "补冬不如补霜降",
-						user: "小美的菜单&nbsp;&nbsp;",
-						content: "霜降出现就意味着马上就进入冬天了，但这时又未到寒冷程度，因此进补应以清补、平补为主。"
-					},
-					{
-						title: "鸡肉做法大全",
-						user: "K32522的菜单&nbsp;&nbsp;",
-						content: "为了健康，请你经常在家做饭吃。鸡肉这样做，简直鲜嫩到令人颤抖，而且做法超简单～"
-					},
-					{
-						title: "超过瘾的口味菜",
-						user: "☘🍂🌷的菜单&nbsp;&nbsp;",
-						content: "这些家常口味菜真的超级好吃，瞬间唤醒胃口，让你能再多吃一碗饭，餐桌要常备哦！"
-					},
-					{
-						title: "粗粮细吃",
-						user: "筱箩的菜单&nbsp;&nbsp;",
-						content: "粗粮细吃的好方法，改善了粗粮口感不好和不易消化的缺点，喜欢就试试吧！"
-					},
-					{
-						title: "超美味的虾料理",
-						user: "zhainina721521的菜单&nbsp;&nbsp;",
-						content: "喜欢吃虾的同学在哪里？这里有超美味的鲜虾料理哦～好吃到让你吮手指！不信试试看？"
-					},
-					{
-						title: "百变泡芙",
-						user: "吴弘跃82的菜单&nbsp;&nbsp;",
-						content: "说到泡芙，想必很多女生们都十分喜欢，萌萌的样子，咬一口，瞬间幸福感爆棚～"
-					},
-					{
-						title: "年糕控最爱",
-						user: "桃叽儿的菜单&nbsp;&nbsp;",
-						content: "软糯有嚼劲，可甜可咸可软可脆，年糕也十分百变，快来看看年糕创新又美味的吃法！"
-					},
-					{
-						title: "百变泡芙",
-						user: "吴弘跃82的菜单&nbsp;&nbsp;",
-						content: "说到泡芙，想必很多女生们都十分喜欢，萌萌的样子，咬一口，瞬间幸福感爆棚～"
-					},
-
-				],
-				activeIndex: 3, // ==2== 当前显示第一张
-				timer: null, // 自动播放的定时器
-				isTransitioning: false, // 是否处于过度动画执行期间
-				transitionInterval: 1000, // 过渡动画时长
-				isResetIndex: false // 是否为瞬间重置定位，在watch中初始化，重定位会取消transition动画
+				timer: "",
+				msg: [],
+				activeIndex: 3,
+				timer: null,
+				isTransitioning: false,
+				transitionInterval: 500,
+				isResetIndex: false,
+				clickOnState: {
+					jiankang: 1,
+					shiliao: 0,
+					hongpei: 1,
+					shipu: 0,
+					xinxiucaipu: 1,
+					yizhouremen: 0,
+					huanying: 0,
+					remenhuati: 1,
+					jinghuarizhi: 0
+				},
+				newlink: [],
+				hotlink: [],
+				wellink: [],
+				jinghua: [],
+				topic: [],
+				topic_pic: []
 			}
 		},
 		methods: {
@@ -1667,7 +742,7 @@
 					this.mark = 0;
 			},
 			play() {
-				 this.timer = setInterval(this.autoplay, 3000)
+				this.timer = setInterval(this.autoplay, 3000)
 			},
 			clearauto() {
 				clearInterval(this.timer)
@@ -1675,7 +750,8 @@
 			clickleft() {
 				if(this.mark == 0) {
 					this.mark = this.imgArr.length - 1;
-				} else {
+				}
+				else {
 					this.mark--;
 				}
 
@@ -1683,7 +759,8 @@
 			clickright() {
 				if(this.mark == this.imgArr.length - 1) {
 					this.mark = 0;
-				} else {
+				}
+				else {
 					this.mark++;
 				}
 
@@ -1698,32 +775,107 @@
 				this.play();
 			},
 			switchFn(i) {
-				console.log(this.len)
+				//console.log(this.len)
 				if(this.isTransitioning) {
-					//console.log(this.isTransitioning)
 					return
-				} else if(i == 1) {
+				}
+				else if(i == 1) {
 					this.activeIndex += 3
-				} else if(i == -1) {
+				}
+				else if(i == -1) {
 					this.activeIndex -= 3
 				}
-				// 动画过渡中不可以进行切换
-				// ==4== 对activeIndex进行操作
+
 			},
-			//					startInterval() { // 启动自动轮播函数
-			//						this.timer = setInterval(() => {
-			//							// ==4== 对activeIndex进行操作
-			//							this.activeIndex+=3
-			//							console.log(this.activeIndex)
-			//						}, 3000)
-			//},
-			//					hoverFn(e) { // 鼠标移入暂停轮播，移出恢复轮播
-			//						if(e.type === 'mouseenter') {
-			//							if(this.timer) clearInterval(this.timer)
-			//						} else {
-			//							this.startInterval()
-			//						}
-			//					}
+			clickOn(n) {
+				//console.log(n)
+				switch(n) {
+					case 1:
+						this.clickOnState.jiankang = 1;
+						this.clickOnState.shiliao = 0;
+						break;
+					case 2:
+						this.clickOnState.jiankang = 0;
+						this.clickOnState.shiliao = 1;
+						break;
+					case 3:
+						this.clickOnState.hongpei = 1;
+						this.clickOnState.shipu = 0;
+						break;
+					case 4:
+						this.clickOnState.hongpei = 0;
+						this.clickOnState.shipu = 1;
+						break;
+					case 5:
+						this.clickOnState.xinxiucaipu = 1;
+						this.clickOnState.yizhouremen = 0;
+						this.clickOnState.huanying = 0
+						break;
+					case 6:
+						this.clickOnState.xinxiucaipu = 0;
+						this.clickOnState.yizhouremen = 1;
+						this.clickOnState.huanying = 0
+						break;
+					case 7:
+						this.clickOnState.xinxiucaipu = 0;
+						this.clickOnState.yizhouremen = 0;
+						this.clickOnState.huanying = 1
+						break;
+					case 8:
+						this.clickOnState.remenhuati = 1;
+						this.clickOnState.jinghuarizhi = 0;
+						break;
+					case 9:
+						this.clickOnState.remenhuati = 0;
+						this.clickOnState.jinghuarizhi = 1;
+						break;
+				}
+			},
+			toTop() {
+				$(window)
+					.scroll(function() {
+						var scrollValue = $(window)
+							.scrollTop();
+						scrollValue > 500 ? $('[class=totop]')
+							.fadeIn() : $('[class=totop]')
+							.fadeOut();
+					});
+			},
+			getRecipe() {
+				this.axios.get("/index/getRecipe")
+					.then(res => {
+						//console.log(res.data)
+						res.data.sort(function(){ return 0.5 - Math.random() })
+						this.newlink = res.data.slice(5, 25);						
+						this.hotlink = res.data.slice(15, 35);						
+						this.wellink = res.data.slice(20, 40);
+						this.jinghua = res.data.slice(35, 55);
+						this.msg = res.data;
+					})
+			},
+			getTopic() {
+				this.axios.get("index/getTopic")
+					.then(res => {
+						this.topic = res.data.topic;
+						this.topic_pic = res.data.pic;
+						for(var i in this.topic) {
+							this.topic[i].pic = []
+							for(var j in this.topic_pic)
+								if(this.topic[i].tid == this.topic_pic[j].tid) {
+									this.topic[i].pic.push(this.topic_pic[j].tp_src)
+								}
+						}
+						//console.log(this.topic)
+						this.topic.sort(function(){ return 0.5 - Math.random() })
+						this.topic = this.topic.slice(1,23)
+					})
+			},
+			getMofang(){
+				this.axios.get('index/getMofang')
+				.then(res=>{
+					this.imgArr = res.data
+				})
+			}
 		},
 		computed: {
 			imgsComputed() {
@@ -1739,32 +891,29 @@
 				return this.imgsComputed.length
 			}
 		},
-		mounted() {
+		created() {
 			this.play();
-
+			this.toTop();
+			this.getRecipe();
+			this.getTopic();
+			this.getMofang();
 		},
 		watch: {
 			activeIndex(newActiveIndex, oldActiveIndex) {
-				//console.log(newActiveIndex, oldActiveIndex)
-				// ==5== 监听activeIndex的变化，当activeIndex到达边界的时候进行复位
-				// if(是轮播图从最后一张切换到第一张 || 是轮播图从第一张切换到最后一张) 是属于瞬间归位，直接return，不执行以后所有函数
 				if((newActiveIndex === 3 && oldActiveIndex === (this.len - 3)) || (oldActiveIndex === 0 && newActiveIndex === this.len - 6)) {
 					this.isResetIndex = true
 					return
 				}
-
 				this.isResetIndex = false
-				this.isTransitioning = true // 为true时表示正在进行transition过渡中，不可以进行切换轮播
-
+				this.isTransitioning = true
 				setTimeout(() => {
-					// 瞬间归位需要取消transition过渡
-					// 以下两种情况是瞬间归位时activeIndex变化
 					if(this.activeIndex === 0) {
 						this.activeIndex = this.len - 6
-					} else if(this.activeIndex === (this.len - 3)) {
+					}
+					else if(this.activeIndex === (this.len - 3)) {
 						this.activeIndex = 3
 					}
-					this.isTransitioning = false // 为false时表示transition过渡结束，可以进行切换轮播
+					this.isTransitioning = false
 				}, this.transitionInterval)
 			}
 		}
@@ -1929,8 +1078,14 @@
 		position: absolute;
 		right: 10px;
 		bottom: 5px;
+		z-index: 999;
 	}
 	
+	.banner_1 .carrousel img{
+		transform:translateX(-450px);
+		height: 360px;
+		
+	}
 	.banner_1 .carrousel .carrousel_list ul li {
 		cursor: pointer;
 		margin: 5px;
@@ -1939,6 +1094,7 @@
 		height: 4px;
 		border: 3px solid #999;
 		border-radius: 50%;
+		
 	}
 	
 	.banner_1 .carrousel .carrousel_list ul li.selected {
@@ -2337,6 +1493,12 @@
 		font-size: 18px;
 		float: left;
 		text-align: center;
+		transition: all .3s;
+	}
+	
+	.banner_3 .banner_3_live .live:last-child>ul li a:hover {
+		border-color: #ff6767;
+		color: #ff6767
 	}
 	
 	.banner_3 .two.banner_3_live {
@@ -2798,8 +1960,7 @@
 		height: 58px;
 		width: 58px;
 		position: fixed;
-		right: 170px;
-		left: auto;
+		left: 85%;
 		bottom: 50px;
 		background: url(/../img/index_img/gotop.png) round;
 	}
