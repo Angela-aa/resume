@@ -5,10 +5,10 @@
         <div class="nav">
             <ul>
                 <li><a href="#">广场</a></li>
-                <li><a href="#">热门话题</a></li>
-                <li><a href="#">精华话题</a></li>
-                <li><a href="#">精华日志</a></li>
-                <li><a href="#">免费抽奖</a></li>
+                <li><router-link to="communityheader/topic">热门话题</router-link></li>
+                <li><router-link to="communityheader/topic">精华话题</router-link></li>
+                <li><router-link to="communityheader/rizhi">精华日志</router-link></li>
+                <li><router-link to="/">免费抽奖</router-link></li>
             </ul>
         </div>
       
@@ -53,8 +53,8 @@
             <div id="slider">
                 <ul>
                     <li>
-                        <a href="#" class="show"><img src="img/community-img/2018102115400868112119732003.jpg" alt=""></a>
-                        <a href="#" class="title">干耗牛肉蒸土豆</a>
+                        <a href="#" class="show" @click.stop.prevent="jump()"><img src="img/community-img/2018102115400868112119732003.jpg" alt=""></a>
+                        <a href="#" class="title" @click.stop.prevent="jump()">干耗牛肉蒸土豆</a>
                         <a href="#" class="netFriend"><img src="img/community-img/1.1.jpg" alt=""> <span>食·色</span></a>
                         <p class="comment">风干牦牛肉？或许是吧，只是显然还不够干。羌藏之地的特产。表面抹满辣椒，当然还有盐...</p>
                     </li>
@@ -97,11 +97,11 @@
 
             <div class="hot-title">
                 <h3>热门话题</h3>
-                <a href="#">话题首页</a>
-                <a href="#">妈妈派</a>
-                <a href="#">厨艺交流</a>
-                <a href="#">烘焙圈</a>
-                <a href="#">美食随手拍</a>                
+                <router-link to="communityheader/topic">话题首页</router-link>
+                <router-link to="communityheader/topic">妈妈派</router-link>
+                <router-link to="communityheader/topic">厨艺交流</router-link>
+                <router-link to="communityheader/topic">烘焙圈</router-link>
+                <router-link to="communityheader/topic">美食随手拍</router-link>               
             </div>
             <div class="list">
                 <ul>
@@ -254,8 +254,15 @@
     </div>
 </template>
 <script>
-    export default{
-
+    export default {
+        data(){
+            return {}
+        },
+        methods:{
+            jump(){
+                this.$router.push("communityheader/rizhi");
+            }
+        }
     }
 </script>
 <style scoped>
@@ -267,11 +274,15 @@
         color:#000;
         text-decoration:none;
     }
+    #main{
+        text-align:left;
+    }
     div.container{
-        width:1045px;
-        margin:20px auto;
+        width:990px;
+        margin:0px auto 20px;
         padding-bottom:20px;
         border-bottom:1px solid #999;
+        
     }
     /**********************logo**********************/
     div.logo{
@@ -324,7 +335,7 @@
         color:#FF838B;
     }
     div.logo .right input{
-        height:27px;
+        height:25px;
         border-radius:3px 0 0 3px;
         border-right:none;
     }
@@ -390,13 +401,13 @@
     /**********************body**********************/
     div.body-left{
         margin-top:30px;
-        width:62%;
+        width:640px;
         float:left;
         overflow:hidden;
     }
     div.body-right{
         margin-top:30px;
-        width:32%;
+        width:300px;
         float:right;
     }
     div.container:after{
@@ -420,11 +431,11 @@
     }
     div.body-right .right{
         width:76%;
-        margin-left:5%;
+        margin-left:4%;
         padding-bottom:30px;
     }
     div.body-right .right p:first-child{
-        font-size:16px;
+        font-size:15px;
     }
     div.body-right .right p:first-child a:hover{
         color:#FF838B;
@@ -475,10 +486,14 @@
     div.body-left #slider ul li{
         float:left;
         height:240px;
-        width:648px;
+        width:640px;
         list-style:none;
+        text-align:left;
         background-color:#F7F7F7;
     }
+      div.body-left #slider ul li a,div.body-left #slider ul li p{
+          
+      }
     div.body-left #slider ul li .show{
         float:left;
         height:100%;
@@ -487,10 +502,10 @@
     }
     div.body-left #slider ul li .title{
         margin:15px 0;
-        float:left;
         font-size:20px;
-        width:290px;
+        display:block;
         height:30px;
+        line-height:30px;
     }
     div.body-left #slider ul li .title:hover{
         color:#FF838B;
@@ -519,6 +534,7 @@
     }
     div.body-left #slider ul li p{
         font-size:14px;
+        padding-right:50px;
     }
     div.body-left .control{
         position: absolute;
@@ -569,7 +585,7 @@
         list-style:none;
         float:right;
         margin-left:15px;
-        font-size:17px;
+        font-size:16px;
         line-height:31px;
     }
     div.body-left .hot-title a:hover{
@@ -596,7 +612,7 @@
     div.body-left .list ul li .title{
         font-size:14px;
         display:block;
-        width:90%;
+        width:88%;
         float:left;
     }
     div.body-left .list ul li .title:hover,.list .b span:hover{
@@ -634,7 +650,7 @@
         display:inline-block;
         width:20px;
         height:20px;
-        right:51px;
+        right:62px;
         bottom:15px;;
         background:rgb(0,0,0,.5);
         color:#fff;
@@ -645,7 +661,7 @@
 
     /**********************bottom**********************/
     div.bottom{
-        width:1045px;
+        width:990px;
         margin:25px auto;
         position:relative;
     }
