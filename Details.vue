@@ -37,7 +37,7 @@
                      <div class="mo">
                         <span class="cicle"></span> <p>食材明细</p>
                      </div>
-                     <!-主料--->
+                     <!--主料-->
                      <fieldset class="particulars">
                          <legend>主料</legend>
                          <div class="recipe">
