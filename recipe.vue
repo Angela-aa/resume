@@ -1183,7 +1183,7 @@ import Footer from '@/views/Footer.vue'
         padding-left:12px;
         padding-top:10px;
       }
-      # slider .right{
+      #slider .right{
         right:3%;
         padding-right:12px;
         padding-top:10px;
